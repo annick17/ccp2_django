@@ -20,10 +20,15 @@
         <div class="row">
             {% block logo %} {% endblock %}
             <div class="row">
-                <nav class="col-11 offset-1 navbar navbar-expand-md fixed-top justify-content-end">
-                    <a class="nav-link active" href="#">
+                <nav class="col-12 navbar navbar-expand-md fixed-top justify-content-end">
+                    {% if user.is_authenticated %}
+                    <h2> Bienvenue {{ user.username }} ! &emsp;&emsp;&emsp;&emsp;
+                        <a href="{% url 'logout' %}">DECONNEXION</a> </h2>{% else %}
+
+                    <a class="nav-link active" href="{% url 'login' %}">
                         <h2>CONNEXION</h2>
                     </a>
+                    {% endif %}
                     <a class="nav-link" href="#">
                         <h2>FORMATION</h2>
                     </a>
@@ -37,8 +42,9 @@
                 </a>
             </div>
         </div>
-    </div>
-    {% block accueil %} {% endblock %}
+
+
+    </div> {% block accueil %} {% endblock %} {% block page_content %} {% endblock %}
 </body>
 
 </html>
