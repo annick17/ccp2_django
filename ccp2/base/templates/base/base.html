@@ -32,7 +32,7 @@
                     <a class="nav-link" href="#">
                         <h2>FORMATION</h2>
                     </a>
-                    <a class="nav-link" href="#"><strong><h2 class="importantbordel">CONTACTEZ-NOUS</h2></strong></a>
+                    <a class="nav-link" href="{% url 'contact' %}"><strong><h2 class="importantbordel">CONTACTEZ-NOUS</h2></strong></a>
                     <a class="nav-link" href="#"><strong><h2 class="importantbordel">NOUS RECRUTONS</h2></strong></a>
                 </nav>
             </div>
@@ -41,10 +41,11 @@
                     <h1><strong>Bienvenue chez Webmag-Agency</strong></h1>
                 </a>
             </div>
+
         </div>
 
 
-    </div> {% block accueil %} {% endblock %} {% block page_content %} {% endblock %}
+    </div> {% block accueil %} {% endblock %} {% block page_content %} {% endblock %} {% block contact %} {% endblock %}
 </body>
 
 </html>
